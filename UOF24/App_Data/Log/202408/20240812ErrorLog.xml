@@ -11,3 +11,39 @@ System.Exception: 請設定 DataKeyNames , 當您有使用 CheckBox Column 的�
    於 System.Web.UI.Control.InitRecursive(Control namingContainer)
    於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 </Event>
+<Event eventID="4e5d960d-d76a-4720-8943-937432092c6d" LogTime="2024/08/12 11:35:25" User="admin" Url="/UOF_Interasialine/CDS/Currency/Default.aspx" Assembly="Ede.Uof.Utility.Page, Version=24.0.8398.52406, Culture=neutral, PublicKeyToken=null">
+System.Web.HttpException (0x80004005): 在選取的資料來源上找不到名稱為 &#39;RATE&#39; 的欄位或屬性。
+   於 System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object&amp; data)
+   於 System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   於 System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   於 System.Web.UI.Control.OnDataBinding(EventArgs e)
+   於 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   於 System.Web.UI.Control.DataBindChildren()
+   於 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   於 System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   於 System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   於 System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   於 System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   於 System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   於 CDS_Currency_Default.BindGrid() 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\Currency\Default.aspx.cs: 行 24
+   於 CDS_Currency_Default.Page_Load(Object sender, EventArgs e) 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\Currency\Default.aspx.cs: 行 16
+   於 System.Web.UI.Control.OnLoad(EventArgs e)
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+</Event>
+<Event eventID="85f99377-0abb-4b5f-b656-5bea12c85bfb" LogTime="2024/08/12 16:12:18" User="admin" Url="/UOF_Interasialine/CDS/Currency/MaintainRate.aspx" Assembly="Ede.Uof.Utility.Page, Version=24.0.8398.52406, Culture=neutral, PublicKeyToken=null">
+System.Data.SqlClient.SqlException (0x80131904): 違反 PRIMARY KEY 條件約束 &#39;PK__TB_IAL_C__98D31CBF290EC77A&#39;。無法在物件 &#39;dbo.TB_IAL_CURRENCY_RATE&#39; 中插入重複的索引鍵。重複的索引鍵值是 (JPY, 2024, 5)。
+陳述式已經結束。
+   於 Ede.Uof.Utility.Data.DatabaseHelper.HandleExceptions(Exception ex) 於 Z:\Builds\20\UofAgile\3.Setup\src\Lib\Utility\Ede.Uof.Utility.Data\DatabaseHelper.cs: 行 616
+   於 Ede.Uof.Utility.Data.DatabaseHelper.ExecuteNonQuery(String query, CommandType commandtype, ConnectionState connectionstate) 於 Z:\Builds\20\UofAgile\3.Setup\src\Lib\Utility\Ede.Uof.Utility.Data\DatabaseHelper.cs: 行 328
+   於 Training.PO.DemoPO.InsertCurrencyRate(TB_IAL_CURRENCY_RATERow dr) 於 D:\技轉教學\Interasialine\UOF_Training\Training\PO\DemoPO.cs: 行 263
+   於 Training.UCO.DemoUCO.InsertCurrencyRate(TB_IAL_CURRENCY_RATERow dr) 於 D:\技轉教學\Interasialine\UOF_Training\Training\UCO\DemoUCO.cs: 行 72
+   於 CDS_Currency_MaintainRate.CreateRate() 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\Currency\MaintainRate.aspx.cs: 行 93
+   於 CDS_Currency_MaintainRate.CDS_Currency_MaintainRate_Button1OnClick() 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\Currency\MaintainRate.aspx.cs: 行 100
+   於 Master_DialogMasterPage.MasterPageRadButton1_Click(Object sender, EventArgs e) 於 Z:\Builds\20\UofAgile\3.Setup\src\Web\Ede.Uof.Web\Master\DialogMasterPage.master.cs: 行 632
+   於 Telerik.Web.UI.RadButton.OnClick(ButtonClickEventArgs e)
+   於 Telerik.Web.UI.RadButton.RaisePostBackEvent(String eventArgument)
+   於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ClientConnectionId:23fff375-deaa-43e3-b3fc-6c6d412f6dcf
+Error Number:2627,State:1,Class:14
+</Event>

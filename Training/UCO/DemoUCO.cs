@@ -9,7 +9,7 @@ using Training.Data;
 
 namespace Training.UCO
 {
-    public  class DemoUCO
+    public class DemoUCO
     {
         DemoPO m_DemoPO = new DemoPO();
 
@@ -24,7 +24,7 @@ namespace Training.UCO
             m_DemoPO.InsertTaskData(dr);
         }
 
-      
+
 
         public DataTable GetUserData()
         {
@@ -64,7 +64,23 @@ namespace Training.UCO
 
         public void DeleteCurrency(string id)
         {
-            m_DemoPO.DeleteCurrency(id);    
+            m_DemoPO.DeleteCurrency(id);
+        }
+
+        public void InsertCurrencyRate(CurrenyDataSet.TB_IAL_CURRENCY_RATERow dr)
+        {
+            m_DemoPO.InsertCurrencyRate(dr);
+        }
+
+        public CurrenyDataSet GetCurrencyRate()
+        {
+            return m_DemoPO.GetCurrencyRate();
+        }
+
+        public void UpdateCurrencyRate(CurrenyDataSet.TB_IAL_CURRENCY_RATERow dr)
+        {
+            // throw new NotImplementedException();
+            m_DemoPO.UpdateCurrencyRate(dr);
         }
     }
 }

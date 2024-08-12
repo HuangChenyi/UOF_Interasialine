@@ -151,6 +151,7 @@ SELECT CURRENCY_ID, CURRENCY_NAME, MODIFYER FROM TB_IAL_CURRENCY WHERE (CURRENCY
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="CURRENCY_NAME" msprop:Generator_ColumnPropNameInRow="CURRENCY_NAME" msprop:Generator_ColumnPropNameInTable="CURRENCY_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnCURRENCY_NAME" msprop:Generator_UserColumnName="CURRENCY_NAME" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

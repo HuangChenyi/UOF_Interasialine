@@ -218,5 +218,74 @@ WHERE
             this.m_db.ExecuteNonQuery(cmdTxt);
 
         }
+
+        internal CurrenyDataSet GetCurrencyRate()
+        {
+            string cmdTxt = @"SELECT 	 TB_IAL_CURRENCY_RATE.[CURRENCY_ID] , 
+[CURRENCY_NAME],
+	 [CURRENCY_RATE] , 
+	 [Year] , 
+	 [Month] , 
+	 TB_IAL_CURRENCY_RATE.[MODIFYER]  
+ FROM TB_IAL_CURRENCY_RATE
+INNER JOIN TB_IAL_CURRENCY
+ON TB_IAL_CURRENCY_RATE.CURRENCY_ID=TB_IAL_CURRENCY.CURRENCY_ID";
+
+            CurrenyDataSet ds = new CurrenyDataSet();
+            ds.Load(this.m_db.ExecuteReader(cmdTxt), LoadOption.OverwriteChanges,
+                               ds.TB_IAL_CURRENCY_RATE);
+            return ds;
+        }
+
+        internal void InsertCurrencyRate(CurrenyDataSet.TB_IAL_CURRENCY_RATERow dr)
+        {
+            string cmdTxt = @"  INSERT INTO [dbo].[TB_IAL_CURRENCY_RATE]  
+(	 [CURRENCY_ID] , 
+	 [CURRENCY_RATE] , 
+	 [Year] , 
+	 [Month] , 
+	 [MODIFYER]  
+) 
+ VALUES 
+ (	 @CURRENCY_ID , 
+	 @CURRENCY_RATE , 
+	 @Year , 
+	 @Month , 
+	 @MODIFYER  
+)";
+
+            this.m_db.AddParameter("@CURRENCY_ID", dr.CURRENCY_ID);
+            this.m_db.AddParameter("@CURRENCY_RATE", dr.CURRENCY_RATE);
+            this.m_db.AddParameter("@Year", dr.Year);
+            this.m_db.AddParameter("@Month", dr.Month);
+            this.m_db.AddParameter("@MODIFYER", dr.MODIFYER);
+
+            this.m_db.ExecuteNonQuery(cmdTxt);
+
+        }
+
+        internal void UpdateCurrencyRate(CurrenyDataSet.TB_IAL_CURRENCY_RATERow dr)
+        {
+            string cmdTxt = @"  UPDATE [dbo].[TB_IAL_CURRENCY_RATE]  
+ SET 
+	 [CURRENCY_RATE] = @CURRENCY_RATE , 
+	 [MODIFYER] = @MODIFYER  
+
+WHERE 
+	[CURRENCY_ID] = @CURRENCY_ID
+AND 
+	[Year] = @Year
+AND 
+	[Month] = @Month";
+
+            this.m_db.AddParameter("@CURRENCY_RATE", dr.CURRENCY_RATE);
+            this.m_db.AddParameter("@MODIFYER", dr.MODIFYER);
+            this.m_db.AddParameter("@CURRENCY_ID", dr.CURRENCY_ID);
+            this.m_db.AddParameter("@Year", dr.Year);
+            this.m_db.AddParameter("@Month", dr.Month);
+
+            this.m_db.ExecuteNonQuery(cmdTxt);
+
+        }
     }
 }

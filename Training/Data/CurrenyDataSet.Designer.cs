@@ -324,6 +324,8 @@ namespace Training.Data {
             
             private global::System.Data.DataColumn columnMODIFYER;
             
+            private global::System.Data.DataColumn columnCURRENCY_NAME;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TB_IAL_CURRENCY_RATEDataTable() {
@@ -399,6 +401,14 @@ namespace Training.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CURRENCY_NAMEColumn {
+                get {
+                    return this.columnCURRENCY_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -434,14 +444,15 @@ namespace Training.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TB_IAL_CURRENCY_RATERow AddTB_IAL_CURRENCY_RATERow(string CURRENCY_ID, decimal CURRENCY_RATE, int Year, int Month, string MODIFYER) {
+            public TB_IAL_CURRENCY_RATERow AddTB_IAL_CURRENCY_RATERow(string CURRENCY_ID, decimal CURRENCY_RATE, int Year, int Month, string MODIFYER, string CURRENCY_NAME) {
                 TB_IAL_CURRENCY_RATERow rowTB_IAL_CURRENCY_RATERow = ((TB_IAL_CURRENCY_RATERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CURRENCY_ID,
                         CURRENCY_RATE,
                         Year,
                         Month,
-                        MODIFYER};
+                        MODIFYER,
+                        CURRENCY_NAME};
                 rowTB_IAL_CURRENCY_RATERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_IAL_CURRENCY_RATERow);
                 return rowTB_IAL_CURRENCY_RATERow;
@@ -478,6 +489,7 @@ namespace Training.Data {
                 this.columnYear = base.Columns["Year"];
                 this.columnMonth = base.Columns["Month"];
                 this.columnMODIFYER = base.Columns["MODIFYER"];
+                this.columnCURRENCY_NAME = base.Columns["CURRENCY_NAME"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,6 +505,8 @@ namespace Training.Data {
                 base.Columns.Add(this.columnMonth);
                 this.columnMODIFYER = new global::System.Data.DataColumn("MODIFYER", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMODIFYER);
+                this.columnCURRENCY_NAME = new global::System.Data.DataColumn("CURRENCY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCURRENCY_NAME);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCURRENCY_ID,
                                 this.columnYear,
@@ -988,6 +1002,34 @@ namespace Training.Data {
                 set {
                     this[this.tableTB_IAL_CURRENCY_RATE.MODIFYERColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CURRENCY_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_IAL_CURRENCY_RATE.CURRENCY_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'TB_IAL_CURRENCY_RATE\' 中資料行 \'CURRENCY_NAME\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_IAL_CURRENCY_RATE.CURRENCY_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCURRENCY_NAMENull() {
+                return this.IsNull(this.tableTB_IAL_CURRENCY_RATE.CURRENCY_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCURRENCY_NAMENull() {
+                this[this.tableTB_IAL_CURRENCY_RATE.CURRENCY_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
