@@ -52,5 +52,19 @@ namespace Training.UCO
             m_DemoPO.UpdateFormResult(docNbr, formResult);
         }
 
+        public void InsertCurrency(CurrenyDataSet.TB_IAL_CURRENCYRow row)
+        {
+            m_DemoPO.InsertCurrency(row);
+        }
+
+        public CurrenyDataSet GetCurrency()
+        {
+            return m_DemoPO.GetCurrency();
+        }
+
+        public void DeleteCurrency(string id)
+        {
+            m_DemoPO.DeleteCurrency(id);    
+        }
     }
 }

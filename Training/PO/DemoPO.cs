@@ -171,6 +171,52 @@ namespace Training.PO
             this.m_db.ExecuteNonQuery(cmdTxt);
         }
 
+        internal void InsertCurrency(CurrenyDataSet.TB_IAL_CURRENCYRow dr)
+        {
+            string cmdTxt = @"  INSERT INTO [dbo].[TB_IAL_CURRENCY]  
+(	 [CURRENCY_ID] , 
+	 [CURRENCY_NAME] , 
+	 [MODIFYER]  
+) 
+ VALUES 
+ (	 @CURRENCY_ID , 
+	 @CURRENCY_NAME , 
+	 @MODIFYER  
+)";
 
+            this.m_db.AddParameter("@CURRENCY_ID", dr.CURRENCY_ID);
+            this.m_db.AddParameter("@CURRENCY_NAME", dr.CURRENCY_NAME);
+            this.m_db.AddParameter("@MODIFYER", dr.MODIFYER);
+
+            this.m_db.ExecuteNonQuery(cmdTxt);
+
+        }
+
+        internal CurrenyDataSet GetCurrency()
+        {
+            string cmdTxt = @" SELECT 
+	 [CURRENCY_ID] , 
+	 [CURRENCY_NAME] , 
+	 [MODIFYER]  
+ FROM [dbo].[TB_IAL_CURRENCY] ";
+
+            CurrenyDataSet ds = new CurrenyDataSet();
+            ds.Load(this.m_db.ExecuteReader(cmdTxt), LoadOption.OverwriteChanges,
+                ds.TB_IAL_CURRENCY);
+            return ds;
+
+        }
+
+        internal void DeleteCurrency(string id)
+        {
+            string cmdTxt = @" DELETE [dbo].[TB_IAL_CURRENCY] 
+WHERE 
+	[CURRENCY_ID] = @CURRENCY_ID";
+
+            this.m_db.AddParameter("@CURRENCY_ID", id);
+
+            this.m_db.ExecuteNonQuery(cmdTxt);
+
+        }
     }
 }

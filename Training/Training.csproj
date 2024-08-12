@@ -89,6 +89,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CurrenyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrenyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DemoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +119,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Data\CurrenyDataSet.xsc">
+      <DependentUpon>CurrenyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\CurrenyDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CurrenyDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\CurrenyDataSet.xss">
+      <DependentUpon>CurrenyDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Data\DemoDataSet.xsc">
       <DependentUpon>DemoDataSet.xsd</DependentUpon>
     </None>
