@@ -1,0 +1,27 @@
+﻿<Event eventID="f5ee33d3-1964-4d80-9f33-ad4302c77a79" LogTime="2024/08/26 15:47:35" User="c496e32b-0968-4de5-95fc-acf7e5a561c0" Url="/UOF_Interasialine/WKF/FormUse/DefinedTask/FirstSite.aspx" Assembly="Ede.Uof.Utility.Page, Version=24.0.8398.52406, Culture=neutral, PublicKeyToken=null">
+System.DivideByZeroException: 嘗試以零除。
+   於 System.Decimal.FCallDivide(Decimal&amp; d1, Decimal&amp; d2)
+   於 System.Decimal.op_Division(Decimal d1, Decimal d2)
+   於 WKF_OptionalFields_OptionFieldUC.BindGrid() 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\WKF_Fields\OptionFieldUC.ascx.cs: 行 331
+   於 WKF_OptionalFields_OptionFieldUC.SetField(VersionField versionField) 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\WKF_Fields\OptionFieldUC.ascx.cs: 行 225
+   於 WKF_OptionalFields_OptionFieldUC.Page_Load(Object sender, EventArgs e) 於 D:\技轉教學\Interasialine\UOF_Training\UOF24\CDS\WKF_Fields\OptionFieldUC.ascx.cs: 行 42
+   於 System.Web.UI.Control.OnLoad(EventArgs e)
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+</Event>

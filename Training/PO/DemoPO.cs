@@ -287,5 +287,19 @@ AND
             this.m_db.ExecuteNonQuery(cmdTxt);
 
         }
+
+        internal decimal GetCurrentRate(string currencyID, string year, string month)
+        {
+            string cmdTxt = @"  select CURRENCY_RATE FROM [TB_IAL_CURRENCY_RATE]
+  WHERE CURRENCY_ID=@CURRENCY_ID AND
+  [Year]=@YEAR AND [Month] = @MONTH";
+
+            this.m_db.AddParameter("@CURRENCY_ID", currencyID);
+            this.m_db.AddParameter("@YEAR", year);
+            this.m_db.AddParameter("@MONTH", month);
+
+            return Convert.ToDecimal(this.m_db.ExecuteScalar(cmdTxt));
+
+        }
     }
 }

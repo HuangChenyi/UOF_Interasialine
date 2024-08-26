@@ -82,5 +82,10 @@ namespace Training.UCO
             // throw new NotImplementedException();
             m_DemoPO.UpdateCurrencyRate(dr);
         }
+
+        public decimal GetCurrentRate(string currencyID, string year, string month)
+        {
+            return m_DemoPO.GetCurrentRate(currencyID, year, month);
+        }
     }
 }
